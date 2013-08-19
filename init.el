@@ -12,4 +12,13 @@
       (goto-char (point-max))
       (eval-print-last-sexp))))
 
-(el-get 'sync)
+(setq my-el-get-packages
+      (append
+       '(helm)))
+
+(el-get 'sync my-el-get-packages)
+
+(when (require 'helm nil t)
+  (global-set-key (kbd "C-c h") 'helm-mini)
+  (helm-mode 1)
+  )
