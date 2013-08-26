@@ -1,6 +1,11 @@
 ;; no backup
 (setq make-backup-files nil)
 
+;;; scroll
+(setq scroll-preserve-screen-position t)
+(setq scroll-conservatively 1)
+(setq scroll-margin 3)
+
 ;;; winodow
 (global-set-key (kbd "<left>") 'windmove-left)
 (global-set-key (kbd "<right>") 'windmove-right)
