@@ -38,8 +38,11 @@
 
 (setq my-el-get-packages
       (append
-       '(helm
-	 auto-complete)))
+       '(
+	 helm
+	 auto-complete
+	 markdown-mode
+	 )))
 
 (el-get 'sync my-el-get-packages)
 
@@ -57,4 +60,12 @@
   (define-key ac-menu-map (kbd "C-p") 'ac-previous)
   ;; enable auto-complete at specific mode
   ;; (add-to-list 'ac-modes 'coffee-mode)
+  )
+
+(when (require 'markdown-mode nil t)
+  (autoload 'markdown-mode "markdown-mode"
+    "Major mode for editing Markdown files" t)
+  (add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
+  (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+  (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
   )
