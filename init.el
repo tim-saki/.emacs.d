@@ -13,6 +13,18 @@
 (global-set-key (kbd "<down>") 'windmove-down)
 (global-set-key (kbd "M-o") 'other-window)
 
+;; functions
+(defun indent-whole-buffer()
+  "indent whole buffer"
+  (interactive)
+  (indent-region (point-min) (point-max) nil)
+  )
+(defun memo()
+  "memo"
+  (interactive)
+  (find-file "~/memo/")
+  )
+
 ;; el-get
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
