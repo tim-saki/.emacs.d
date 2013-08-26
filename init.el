@@ -13,6 +13,10 @@
 (global-set-key (kbd "<down>") 'windmove-down)
 (global-set-key (kbd "M-o") 'other-window)
 
+;; recentf
+(recentf-mode 1)
+(global-set-key (kbd "C-x C-r") 'recentf-open-files)
+
 ;; functions
 (defun indent-whole-buffer()
   "indent whole buffer"
