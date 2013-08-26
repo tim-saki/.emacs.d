@@ -14,11 +14,23 @@
 
 (setq my-el-get-packages
       (append
-       '(helm)))
+       '(helm
+	 auto-complete)))
 
 (el-get 'sync my-el-get-packages)
 
 (when (require 'helm nil t)
   (global-set-key (kbd "C-c h") 'helm-mini)
   (helm-mode 1)
+  )
+
+(when (require 'auto-complete nil t)
+  (setq ac-use-menu-map t)
+  (setq ac-auto-start 1)
+  (setq ac-ignore-case nil)
+  (global-auto-complete-mode t)
+  (define-key ac-menu-map (kbd "C-n") 'ac-next)
+  (define-key ac-menu-map (kbd "C-p") 'ac-previous)
+  ;; enable auto-complete at specific mode
+  ;; (add-to-list 'ac-modes 'coffee-mode)
   )
