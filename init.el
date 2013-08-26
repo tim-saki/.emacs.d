@@ -29,6 +29,10 @@
   (find-file "~/memo/")
   )
 
+;;; shortcut
+(global-set-key (kbd "<f1>") 'indent-whole-buffer)
+(global-set-key (kbd "<f2>") 'eval-current-buffer)
+
 ;; el-get
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
