@@ -1,6 +1,13 @@
 ;; no backup
 (setq make-backup-files nil)
 
+;;; winodow
+(global-set-key (kbd "<left>") 'windmove-left)
+(global-set-key (kbd "<right>") 'windmove-right)
+(global-set-key (kbd "<up>") 'windmove-up)
+(global-set-key (kbd "<down>") 'windmove-down)
+(global-set-key (kbd "M-o") 'other-window)
+
 ;; el-get
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
