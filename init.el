@@ -1,6 +1,12 @@
 ;; no backup
 (setq make-backup-files nil)
 
+;; display
+(show-paren-mode t)
+(global-linum-mode t)
+(global-hl-line-mode t)
+(setq-default show-trailing-whitespace t)
+
 ;;; scroll
 (setq scroll-preserve-screen-position t)
 (setq scroll-conservatively 1)
