@@ -56,6 +56,7 @@
 	 helm
 	 auto-complete
 	 markdown-mode
+	 coffee-mode
 	 )))
 
 (el-get 'sync my-el-get-packages)
@@ -82,4 +83,12 @@
   (add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
   (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
   (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+  )
+
+(when (require 'coffee-mode nil t)
+  (defun coffee-custom ()
+    "coffee-mode-hook"
+    (and (set (make-local-variable 'tab-width) 2)
+	 (set (make-local-variable 'coffee-tab-width) 2)))
+  (add-hook 'coffee-mode-hook '(lambda() (coffee-custom)))
   )
