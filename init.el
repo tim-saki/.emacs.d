@@ -7,6 +7,11 @@
 (global-hl-line-mode t)
 (setq-default show-trailing-whitespace t)
 
+;; ui
+(delete-selection-mode t)
+(defalias 'yes-or-no-p 'y-or-n-p)
+(setq require-final-newline t)
+
 ;;; scroll
 (setq scroll-preserve-screen-position t)
 (setq scroll-conservatively 1)
