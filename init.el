@@ -84,7 +84,7 @@
   (define-key ac-menu-map (kbd "C-n") 'ac-next)
   (define-key ac-menu-map (kbd "C-p") 'ac-previous)
   ;; enable auto-complete at specific mode
-  ;; (add-to-list 'ac-modes 'coffee-mode)
+  (add-to-list 'ac-modes 'coffee-mode)
   )
 
 (when (require 'markdown-mode nil t)
