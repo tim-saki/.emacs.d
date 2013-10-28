@@ -39,6 +39,11 @@
   (interactive)
   (find-file "~/memo/")
   )
+(defun open()
+  "open"
+  (interactive)
+  (shell-command (concat "open " (buffer-file-name)))
+  )
 
 ;;; shortcut
 (global-set-key (kbd "<f1>") 'indent-whole-buffer)
