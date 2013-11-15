@@ -70,6 +70,7 @@
 	 tabbar
 	 popwin
 	 direx
+	 zencoding-mode
 	 )))
 
 (el-get 'sync my-el-get-packages)
@@ -121,4 +122,8 @@
   (push '(direx:direx-mode :position left :width 40 :dedicated t)
 	popwin:special-display-config)
   (global-set-key (kbd "C-x C-j") 'direx:jump-to-directory-other-window)
+  )
+
+(when (require 'zencoding-mode nil t)
+  (add-hook 'sgml-mode-hook 'zencoding-mode)
   )
