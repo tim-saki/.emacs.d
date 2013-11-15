@@ -68,6 +68,8 @@
 	 markdown-mode
 	 coffee-mode
 	 tabbar
+	 popwin
+	 direx
 	 )))
 
 (el-get 'sync my-el-get-packages)
@@ -105,8 +107,18 @@
   )
 
 (when (require 'tabbar nil t)
-  (tabbar-mode)
+  (tabbar-mode t)
+  (setq tabbar-separator '(1.0))
   (global-set-key (kbd "C-M-n") 'tabbar-forward-tab)
   (global-set-key (kbd "C-M-p") 'tabbar-backward-tab)
   (setq tabbar-buffer-groups-function nil)
+  )
+
+(when (require 'popwin nil t)
+  (popwin-mode t))
+
+(when (require 'direx nil t)
+  (push '(direx:direx-mode :position left :width 40 :dedicated t)
+	popwin:special-display-config)
+  (global-set-key (kbd "C-x C-j") 'direx:jump-to-directory-other-window)
   )
