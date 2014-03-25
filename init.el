@@ -132,3 +132,7 @@
   (lambda ()
     (font-lock-add-keywords nil
       '(("^[^\n]\\{80\\}\\(.*\\)$" 1 font-lock-warning-face t)))))
+
+;; themes
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+(load-theme 'my-tomorrow-night t)
