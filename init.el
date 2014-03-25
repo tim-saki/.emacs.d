@@ -127,3 +127,8 @@
 (when (require 'zencoding-mode nil t)
   (add-hook 'sgml-mode-hook 'zencoding-mode)
   )
+
+(add-hook 'python-mode-hook
+  (lambda ()
+    (font-lock-add-keywords nil
+      '(("^[^\n]\\{80\\}\\(.*\\)$" 1 font-lock-warning-face t)))))
