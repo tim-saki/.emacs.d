@@ -6,6 +6,7 @@
 (global-linum-mode t)
 (global-hl-line-mode t)
 (setq-default show-trailing-whitespace t)
+(setq-default indent-tabs-mode nil)
 
 ;; ui
 (delete-selection-mode t)
