@@ -25,10 +25,6 @@
 (global-set-key (kbd "<down>") 'windmove-down)
 (global-set-key (kbd "M-o") 'other-window)
 
-;; recentf
-(recentf-mode 1)
-(global-set-key (kbd "C-x C-r") 'recentf-open-files)
-
 ;; functions
 (defun indent-whole-buffer()
   "indent whole buffer"
@@ -79,6 +75,10 @@
 (when (require 'helm nil t)
   (global-set-key (kbd "C-c h") 'helm-mini)
   (helm-mode 1)
+  (global-set-key (kbd "C-x C-r") 'helm-recentf)
+  (global-set-key (kbd "C-x C-b") 'helm-buffers-list)
+  (global-set-key (kbd "M-x") 'helm-M-x)
+  (global-set-key (kbd "M-s") 'helm-occur)
   )
 
 (when (require 'auto-complete nil t)
