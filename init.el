@@ -8,6 +8,7 @@
 (setq-default show-trailing-whitespace t)
 (setq-default indent-tabs-mode nil)
 (menu-bar-mode -1)
+(column-number-mode 1)
 
 ;; ui
 (delete-selection-mode t)
