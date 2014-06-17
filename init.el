@@ -68,7 +68,6 @@
 	 auto-complete
 	 markdown-mode
 	 coffee-mode
-	 tabbar
 	 popwin
 	 direx
 	 zencoding-mode
@@ -106,14 +105,6 @@
     (and (set (make-local-variable 'tab-width) 2)
 	 (set (make-local-variable 'coffee-tab-width) 2)))
   (add-hook 'coffee-mode-hook '(lambda() (coffee-custom)))
-  )
-
-(when (require 'tabbar nil t)
-  (tabbar-mode t)
-  (setq tabbar-separator '(1.0))
-  (global-set-key (kbd "C-M-n") 'tabbar-forward-tab)
-  (global-set-key (kbd "C-M-p") 'tabbar-backward-tab)
-  (setq tabbar-buffer-groups-function nil)
   )
 
 (when (require 'popwin nil t)
