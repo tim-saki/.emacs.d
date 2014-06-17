@@ -7,6 +7,7 @@
 (global-hl-line-mode t)
 (setq-default show-trailing-whitespace t)
 (setq-default indent-tabs-mode nil)
+(menu-bar-mode -1)
 
 ;; ui
 (delete-selection-mode t)
@@ -16,7 +17,6 @@
 ;;; scroll
 (setq scroll-preserve-screen-position t)
 (setq scroll-conservatively 1)
-(setq scroll-margin 3)
 
 ;;; winodow
 (global-set-key (kbd "<left>") 'windmove-left)
