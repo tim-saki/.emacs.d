@@ -64,15 +64,15 @@
 (setq my-el-get-packages
       (append
        '(
-	 helm
-	 auto-complete
-	 markdown-mode
-	 coffee-mode
-	 popwin
-	 direx
-	 zencoding-mode
+         helm
+         auto-complete
+         markdown-mode
+         coffee-mode
+         popwin
+         direx
+         zencoding-mode
          feature-mode
-	 )))
+         )))
 
 (el-get 'sync my-el-get-packages)
 
@@ -104,7 +104,7 @@
   (defun coffee-custom ()
     "coffee-mode-hook"
     (and (set (make-local-variable 'tab-width) 2)
-	 (set (make-local-variable 'coffee-tab-width) 2)))
+         (set (make-local-variable 'coffee-tab-width) 2)))
   (add-hook 'coffee-mode-hook '(lambda() (coffee-custom)))
   )
 
@@ -113,7 +113,7 @@
 
 (when (require 'direx nil t)
   (push '(direx:direx-mode :position left :width 40 :dedicated t)
-	popwin:special-display-config)
+        popwin:special-display-config)
   (global-set-key (kbd "C-x C-j") 'direx:jump-to-directory-other-window)
   )
 
