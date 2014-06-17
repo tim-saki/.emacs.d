@@ -71,6 +71,7 @@
 	 popwin
 	 direx
 	 zencoding-mode
+         feature-mode
 	 )))
 
 (el-get 'sync my-el-get-packages)
@@ -118,6 +119,11 @@
 
 (when (require 'zencoding-mode nil t)
   (add-hook 'sgml-mode-hook 'zencoding-mode)
+  )
+
+(when (require 'feature-mode nil t)
+  (setq feature-default-language "ja")
+  (add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
   )
 
 (add-hook 'python-mode-hook
