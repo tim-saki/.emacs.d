@@ -69,6 +69,7 @@
          direx
          zencoding-mode
          feature-mode
+         undo-tree
          )))
 
 (el-get 'sync my-el-get-packages)
@@ -125,6 +126,11 @@
 (when (require 'feature-mode nil t)
   (setq feature-default-language "ja")
   (add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
+  )
+
+;; undo-tree
+(when (require 'undo-tree nil t)
+  (global-undo-tree-mode)
   )
 
 (add-hook 'python-mode-hook
