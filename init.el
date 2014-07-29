@@ -71,6 +71,9 @@
          zencoding-mode
          feature-mode
          undo-tree
+         ruby-electric
+         magit
+         flycheck
          )))
 
 (el-get 'sync my-el-get-packages)
@@ -83,6 +86,13 @@
   (global-set-key (kbd "M-x") 'helm-M-x)
   (global-set-key (kbd "M-s") 'helm-occur)
   )
+
+;; magit
+(global-set-key (kbd "C-x g") 'magit-status)
+(push '("\\*magit*" :regexp t) popwin:special-display-config)
+
+;; flycheck
+(add-hook 'after-init-hook #'global-flycheck-mode)
 
 (when (require 'auto-complete nil t)
   (setq ac-use-menu-map t)
