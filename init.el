@@ -78,6 +78,7 @@
 
 (el-get 'sync my-el-get-packages)
 
+;; helm
 (when (require 'helm nil t)
   (global-set-key (kbd "C-c h") 'helm-mini)
   (helm-mode 1)
@@ -87,13 +88,10 @@
   (global-set-key (kbd "M-s") 'helm-occur)
   )
 
-;; magit
-(global-set-key (kbd "C-x g") 'magit-status)
-(push '("\\*magit*" :regexp t) popwin:special-display-config)
-
 ;; flycheck
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
+;; auto-complete
 (when (require 'auto-complete nil t)
   (setq ac-use-menu-map t)
   (setq ac-auto-start 1)
@@ -105,6 +103,7 @@
   (add-to-list 'ac-modes 'coffee-mode)
   )
 
+;; markdown-mode
 (when (require 'markdown-mode nil t)
   (autoload 'markdown-mode "markdown-mode"
     "Major mode for editing Markdown files" t)
@@ -113,6 +112,7 @@
   (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
   )
 
+;; coffee-mode
 (when (require 'coffee-mode nil t)
   (defun coffee-custom ()
     "coffee-mode-hook"
@@ -121,19 +121,27 @@
   (add-hook 'coffee-mode-hook '(lambda() (coffee-custom)))
   )
 
+;; popwin
 (when (require 'popwin nil t)
   (popwin-mode t))
 
+;; direx
 (when (require 'direx nil t)
   (push '(direx:direx-mode :position left :width 40 :dedicated t)
         popwin:special-display-config)
   (global-set-key (kbd "C-x C-j") 'direx:jump-to-directory-other-window)
   )
 
+;; magit
+(global-set-key (kbd "C-x g") 'magit-status)
+(push '("\\*magit*" :regexp t) popwin:special-display-config)
+
+;; zencoding-mode
 (when (require 'zencoding-mode nil t)
   (add-hook 'sgml-mode-hook 'zencoding-mode)
   )
 
+;; feature-mode
 (when (require 'feature-mode nil t)
   (setq feature-default-language "ja")
   (add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
@@ -144,11 +152,8 @@
   (global-undo-tree-mode)
   )
 
+;; python
 (add-hook 'python-mode-hook
   (lambda ()
     (font-lock-add-keywords nil
       '(("^[^\n]\\{80\\}\\(.*\\)$" 1 font-lock-warning-face t)))))
-
-;; themes
-;; (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
-;; (load-theme 'my-tomorrow-night t)
