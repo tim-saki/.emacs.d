@@ -157,3 +157,6 @@
   (lambda ()
     (font-lock-add-keywords nil
       '(("^[^\n]\\{80\\}\\(.*\\)$" 1 font-lock-warning-face t)))))
+
+;; ruby
+(defun ruby-mode-set-encoding () nil)
