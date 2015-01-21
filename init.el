@@ -163,4 +163,4 @@
       '(("^[^\n]\\{80\\}\\(.*\\)$" 1 font-lock-warning-face t)))))
 
 ;; ruby
-(defun ruby-mode-set-encoding () nil)
+(setq ruby-insert-encoding-magic-comment nil)
