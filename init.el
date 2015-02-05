@@ -15,6 +15,7 @@
 (delete-selection-mode t)
 (defalias 'yes-or-no-p 'y-or-n-p)
 (setq require-final-newline t)
+(recentf-mode 1)
 
 ;;; scroll
 (setq scroll-preserve-screen-position t)
