@@ -165,3 +165,6 @@
 
 ;; ruby
 (setq ruby-insert-encoding-magic-comment nil)
+
+;; js
+(setq js-indent-level 2)
