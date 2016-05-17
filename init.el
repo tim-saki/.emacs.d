@@ -75,6 +75,7 @@
          ruby-electric
          magit
          flycheck
+         org-mode
          )))
 
 (el-get 'sync my-el-get-packages)
